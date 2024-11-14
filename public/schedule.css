@@ -1,0 +1,18 @@
+html
+{
+  background-color: antiquewhite;
+  text-align: center;
+}
+table 
+{
+  display: inline-block;
+  border: 1px solid black;
+}
+th
+{
+  border: 1px solid black;
+}
+td
+{
+  border: 1px solid black;
+}
