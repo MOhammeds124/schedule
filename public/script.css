@@ -1,0 +1,19 @@
+html
+{
+	background-color:#03aff1;
+	text-align:center; 
+	margin-top:25%;
+}
+label
+{
+	font-size:80px;
+	font-family: sans-serif;
+}
+input
+{
+	width:150px;
+}
+button
+{
+	width:150px;
+}

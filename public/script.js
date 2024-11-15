@@ -1,14 +1,21 @@
 window.addEventListener("load",addlistener) 
-
-window.testvar = "helpme";
-var whichinput="osis", firstname="", lastname="", osis="", grade="", fullname="", counselor="", room="", oclass=""; 
+var whichinput="osis", boxchecker="", firstname="", lastname="", osis="", grade="", fullname="", counselor="", room="", oclass=""; 
 function addlistener() 
 {
-    document.getElementById("btninfo").addEventListener("click",checkinput)
+    document.getElementById("btninfo").addEventListener("click",boxcheck)
+}
+function boxcheck() 
+{
+	 boxchecker= document.getElementById("txtinfo").value 
+		if(boxchecker=="")
+			{alert("please fill in the box")}
+		else
+		{
+			checkinput()
+		}
 }
 function checkinput() 
 {
-	
     switch(whichinput)
     {
         case "osis":
@@ -35,8 +42,9 @@ function inputosis()
 {
     osis= document.getElementById("txtinfo").value
     var osislegnth= osis.length;
+	var osischeck= osis % 1
     osis= parseInt(osis);
-    if(osislegnth!=9 || osis==0)
+    if(osislegnth!=9 || osis==0||osischeck!=0)
     {alert("please input a valid osis")}
     else
     {
@@ -65,8 +73,9 @@ function inputfullname()
 function inputgrade()
 {
     grade= document.getElementById("txtinfo").value
+	var gradecheck=grade%1
     grade= parseInt(grade)
-    if(grade<9 || grade>12)
+    if(grade<9 || grade>12||gradecheck!=0)
     {
         alert("please input a valid grade")
     }
@@ -88,6 +97,12 @@ function inputcounselor()
             case "VEGA": room="112L"; oclass="C2B"; changequestion();break;
             case "VALERIO": room="112M";oclass="B2A";changequestion(); break;
             case "NIETO": room="112N"; oclass="A3A";changequestion();break;
+			case "ABASSI": room="112N"; oclass="D4A";changequestion();break;
+			case "BHANOTHAQUE": room="112N"; oclass="B3D";changequestion();break;
+			case "MANGANIELLO": room="112N"; oclass="A3A";changequestion();break;
+			case "O": room="112N"; oclass="A3A";changequestion();break;
+			case "GRULLON": room="112N"; oclass="A3A";changequestion();break;
+			case "HUSSAINI": room="112N"; oclass="A3A";changequestion();break;
             default: alert("please input a valid counselor");break;
         }
 }
@@ -100,8 +115,9 @@ function changequestion()
 function inputyear() 
 {
     year= document.getElementById("txtinfo").value
+	var yearcheck= year%1
     year= parseInt(year)
-    if(year<2000 || year>2050)
+    if(year<2000 || year>2050||yearcheck!=0)
     {
         alert("please input a valid year")
     }
@@ -115,8 +131,8 @@ function inputyear()
 function inputterm()
 {
     term= document.getElementById("txtinfo").value
+	var numcheck= term%1
     term= parseInt(term)
-    var numcheck= term%1
     if(term<1 || term>2||numcheck!=0)
     {
         alert("please input a valid term")
